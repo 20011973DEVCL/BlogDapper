@@ -1,4 +1,4 @@
-namespace BlogDapper.Entities
+namespace BlogDapperNew.Entities
 {
     public class Usuario
     {

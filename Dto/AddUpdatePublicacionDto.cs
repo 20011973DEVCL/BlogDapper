@@ -1,4 +1,4 @@
-namespace BlogDapper.Dto
+namespace BlogDapperNew.Dto
 {
     public class AddUpdatePublicacionDto
     {

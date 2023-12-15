@@ -1,7 +1,7 @@
 using System.Data;
 using Microsoft.Data.SqlClient;
 
-namespace BlogDapper.Data
+namespace BlogDapperNew.Data
 {
     public class DapperContext
     {

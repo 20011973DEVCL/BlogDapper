@@ -1,7 +1,7 @@
 
 using Dapper.Contrib.Extensions;
 
-namespace BlogDapper.Entities
+namespace BlogDapperNew.Entities
 {
     [Table("Publicacion")]
     public class Publicacion

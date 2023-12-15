@@ -1,8 +1,8 @@
 using System.Data;
-using BlogDapper.Data;
-using BlogDapper.Dto;
-using BlogDapper.Entities;
-using BlogDapper.Interfaces;
+using BlogDapperNew.Data;
+using BlogDapperNew.Dto;
+using BlogDapperNew.Entities;
+using BlogDapperNew.Interfaces;
 using Dapper;
 
 namespace BlogDapper.Repository
@@ -76,6 +76,11 @@ namespace BlogDapper.Repository
             var query = @"DELETE FROM Publicacion WHERE Id=@Id";
             using var connection = _context.CreateConnection(); 
             await connection.ExecuteAsync(query,new {id});
+        }
+
+        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,8 +1,8 @@
-using BlogDapper.Data;
-using BlogDapper.Dto;
-using BlogDapper.Entities;
-using BlogDapper.Interfaces;
+using BlogDapperNew.Dto;
+using BlogDapperNew.Entities;
+using BlogDapperNew.Interfaces;
 using Dapper.Contrib.Extensions;
+using BlogDapperNew.Data;
 
 namespace BlogDapper.Repository
 {
@@ -66,10 +66,9 @@ namespace BlogDapper.Repository
             await connection.DeleteAsync(new Publicacion() { Id = id});
         }
 
-        
-
-        
-
-
+        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

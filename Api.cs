@@ -1,7 +1,7 @@
-﻿using BlogDapper.Dto;
-using BlogDapper.Interfaces;
+﻿using BlogDapperNew.Dto;
+using BlogDapperNew.Interfaces;
 
-namespace BlogDapper;
+namespace BlogDapperNew;
 
 public static class Api
 {

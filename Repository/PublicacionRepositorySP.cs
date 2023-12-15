@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using BlogDapper.Data;
-using BlogDapper.Dto;
-using BlogDapper.Entities;
-using BlogDapper.Interfaces;
+using BlogDapperNew.Data;
+using BlogDapperNew.Dto;
+using BlogDapperNew.Entities;
+using BlogDapperNew.Interfaces;
 using Dapper;
 
 namespace BlogDapper.Repository
@@ -67,6 +63,11 @@ namespace BlogDapper.Repository
             var publicaciones = await connection.QueryAsync<Publicacion>(storedProceduure,null,
                                                                             commandType:CommandType.StoredProcedure);
             return publicaciones;
+        }
+
+        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdatePublicacion(int id, AddUpdatePublicacionDto publicacionDto)

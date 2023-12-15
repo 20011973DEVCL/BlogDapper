@@ -1,7 +1,7 @@
-using BlogDapper;
-using BlogDapper.Data;
-using BlogDapper.Interfaces;
 using BlogDapper.Repository;
+using BlogDapperNew;
+using BlogDapperNew.Data;
+using BlogDapperNew.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,9 @@
-using BlogDapper.Dto;
-using BlogDapper.Entities;
+using BlogDapperNew.Dto;
+using BlogDapperNew.Entities;
 
-namespace BlogDapper.Interfaces
+
+
+namespace BlogDapperNew.Interfaces
 {
     public interface IPublicacionRepository
     {
@@ -10,5 +12,7 @@ namespace BlogDapper.Interfaces
         public Task<Publicacion> CreatePublicacion(AddUpdatePublicacionDto addUpdatePublicacionDto);
         public Task UpdatePublicacion(int id, AddUpdatePublicacionDto publicacionDto);
         public Task DeletePublicacion(int id);
+
+        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id);
     }
 } 
