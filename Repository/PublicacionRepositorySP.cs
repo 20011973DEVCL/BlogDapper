@@ -11,6 +11,7 @@ using Dapper;
 
 namespace BlogDapper.Repository
 {
+    // Repositorio para realizar el CRUD solo con Procedimientos Almacenados
     public class PublicacionRepositorySP : IPublicacionRepository
     {
         private readonly DapperContext _context;

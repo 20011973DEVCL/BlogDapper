@@ -6,7 +6,7 @@ using Dapper.Contrib.Extensions;
 
 namespace BlogDapper.Repository
 {
-    
+    // Repositorio para realizar el CRUD solo con instrucciones de Dapper.Contrib
     public class PublicacionRepositoryContrib : IPublicacionRepository
     {
         private readonly DapperContext _context;

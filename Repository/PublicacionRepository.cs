@@ -7,6 +7,7 @@ using Dapper;
 
 namespace BlogDapper.Repository
 {
+    // Repositorio para realizar el CRUD solo con instrucciones SQL
     public class PublicacionRepository : IPublicacionRepository
     {
         private readonly DapperContext _context;
