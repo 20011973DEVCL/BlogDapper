@@ -12,6 +12,39 @@ public static class Api
         app.MapPost("/publicaciones", AgregarPublicacion);
         app.MapPut("/publicaciones/{id}", ActualizarPublicacion);
         app.MapDelete("/publicaciones/{id}", EliminarPublicacion);
+        app.MapGet("/publicaciones/{id}/usuario", ObtenerUsuarioPublicacion);
+        app.MapGet("/publicaciones/{id}/comentarios", ObtenerComentariosPublicacion);
+    }
+    private static async Task<IResult> ObtenerComentariosPublicacion(IPublicacionRepository publicacionRepository, int id)
+    {
+        try
+        {
+            var publicacionConComentarios = await publicacionRepository.GetPublicacionConComentarios(id);
+            if (publicacionConComentarios == null)
+                  return Results.NotFound();
+
+            return Results.Ok(publicacionConComentarios);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> ObtenerUsuarioPublicacion(IPublicacionRepository publicacionRepository, int id)
+    {
+        try
+        {
+            var usuarioPublicacion = await publicacionRepository.GetUsuarioPublicacion(id);
+            if (usuarioPublicacion == null)
+                  return Results.NotFound();
+
+            return Results.Ok(usuarioPublicacion);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
     }
 
     private static async Task<IResult> ObtenerPublicaciones(IPublicacionRepository publicacionRepository)
@@ -42,7 +75,6 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
-
     private static async Task<IResult> AgregarPublicacion(IPublicacionRepository publicacionRepository,
         AddUpdatePublicacionDto publicacionDto)
     {
@@ -56,7 +88,6 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
-
     private static async Task<IResult> ActualizarPublicacion(IPublicacionRepository publicacionRepository,
         int Id, AddUpdatePublicacionDto publicacionDto)
     {
@@ -74,7 +105,6 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
-
     private static async Task<IResult> EliminarPublicacion(IPublicacionRepository publicacionRepository,
         int Id)
     {

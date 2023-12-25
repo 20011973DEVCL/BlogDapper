@@ -65,7 +65,18 @@ namespace BlogDapper.Repository
             return publicaciones;
         }
 
-        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id)
+        public async Task<UsuarioPublicacionDto> GetUsuarioPublicacion(int id)
+        {
+            var query = "spMostrarUsuarioPublicacion";
+            var parameters = new DynamicParameters();
+            parameters.Add("Id", id, DbType.Int32,ParameterDirection.Input);
+            using var connection = _context.CreateConnection();
+            var usuarioPublicacion = await connection.QueryFirstAsync<UsuarioPublicacionDto>(query, parameters, 
+                commandType:CommandType.StoredProcedure);
+            return usuarioPublicacion; 
+        }
+
+        public Task<Publicacion> GetPublicacionConComentarios(int id)
         {
             throw new NotImplementedException();
         }

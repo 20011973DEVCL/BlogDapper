@@ -66,7 +66,12 @@ namespace BlogDapper.Repository
             await connection.DeleteAsync(new Publicacion() { Id = id});
         }
 
-        public Task<UsuarioPublicacionDto> getUsuarioPublicacion(int id)
+        public Task<UsuarioPublicacionDto> GetUsuarioPublicacion(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Publicacion> GetPublicacionConComentarios(int id)
         {
             throw new NotImplementedException();
         }
